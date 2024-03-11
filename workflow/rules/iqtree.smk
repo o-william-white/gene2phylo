@@ -1,8 +1,6 @@
 rule iqtree:
-    params:
-        input_dir=input_dir,
     input:
-        fasta="{params.input_dir}/{genes}.fasta",
+        fasta=input_dir+"/{genes}.fasta",
     output:
         tree="results/iqtree/{genes}.treefile",
     log:
