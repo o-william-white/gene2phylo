@@ -1,0 +1,29 @@
+
+# load rules 
+include: "rules/common.smk"
+if realign == True:
+    include: "rules/mafft.smk"
+    include: "rules/filter_alignments.smk"
+    include: "rules/alignment_trim.smk"
+    include: "rules/iqtree_realign.smk"
+    include: "rules/concatenate_alignments_realign.smk"
+else:
+    include: "rules/iqtree.smk"
+    include: "rules/concatenate_alignments.smk"
+include: "rules/root_iqtree.smk"
+include: "rules/plot_iqtree.smk"
+include: "rules/iqtree_partitioned.smk"
+include: "rules/root_iqtree_partitioned.smk"
+include: "rules/plot_iqtree_partitioned.smk"
+include: "rules/astral_cat_input.smk"
+include: "rules/astral.smk"
+include: "rules/root_astral.smk"
+include: "rules/plot_astral.smk"
+
+# one rule to rule them all :)
+rule all:
+    input:
+        expand("results/iqtree_plots/{gene}.png", gene=GENES),
+        f"results/iqtree_partitioned_plot/iqtree_partitioned_plot.png",
+        f"results/astral_plot/astral_plot.png"
+
