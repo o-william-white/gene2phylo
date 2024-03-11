@@ -1,12 +1,12 @@
 rule root_iqtree_partitioned:
     input:
-        tree = "results/iqtree_partitioned/output.treefile"
+        tree="results/iqtree_partitioned/output.treefile",
     params:
-        outgroup = outgroup
+        outgroup=outgroup,
     output:
-        tree = "results/iqtree_partitioned/output.treefile.rooted.newick"
+        tree="results/iqtree_partitioned/output.treefile.rooted.newick",
     log:
-        "logs/root_iqtree_partitioned/log.txt"
+        "logs/root_iqtree_partitioned/log.txt",
     conda:
         "../envs/ete3.yaml"
     shell:

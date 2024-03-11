@@ -1,10 +1,10 @@
 rule astral:
     input:
-        tree = "results/astral/input_trees.tree"
+        tree="results/astral/input_trees.tree",
     output:
-        tree = "results/astral/output.tree"
+        tree="results/astral/output.tree",
     log:
-        "logs/astral/log.txt"
+        "logs/astral/log.txt",
     conda:
         "../envs/astral.yaml"
     shell:

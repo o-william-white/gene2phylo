@@ -1,13 +1,13 @@
 rule plot_astral:
     input:
-        tree = "results/astral/output.tree.rooted.newick"
+        tree="results/astral/output.tree.rooted.newick",
     params:
-        height = plot_height,
-        width = plot_width
+        height=plot_height,
+        width=plot_width,
     output:
-        png = "results/astral_plot/astral_plot.png"
+        png="results/astral_plot/astral_plot.png",
     log:
-        "logs/astral_plot/log.txt"
+        "logs/astral_plot/log.txt",
     conda:
         "../envs/r_env.yaml"
     shell:

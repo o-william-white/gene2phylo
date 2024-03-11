@@ -1,12 +1,12 @@
 rule mafft:
     params:
-        input_dir = input_dir
+        input_dir=input_dir,
     input:
-        "{params.input_dir}/{genes}.fasta"
+        "{params.input_dir}/{genes}.fasta",
     output:
-        "results/mafft/{genes}.fasta"
+        "results/mafft/{genes}.fasta",
     log:
-        "logs/mafft/{genes}.log"
+        "logs/mafft/{genes}.log",
     conda:
         "../envs/mafft.yaml"
     shell:

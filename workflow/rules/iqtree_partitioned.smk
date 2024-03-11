@@ -1,11 +1,11 @@
 rule iqtree_partitioned:
     input:
-        fasta = "results/concatenate_alignments/output.fasta",
-        partitions = "results/concatenate_alignments/output.txt"
+        fasta="results/concatenate_alignments/output.fasta",
+        partitions="results/concatenate_alignments/output.txt",
     output:
-        "results/iqtree_partitioned/output.treefile"
+        "results/iqtree_partitioned/output.treefile",
     log:
-        "logs/iqtree_partitioned/log.txt"
+        "logs/iqtree_partitioned/log.txt",
     conda:
         "../envs/iqtree.yaml"
     shell:

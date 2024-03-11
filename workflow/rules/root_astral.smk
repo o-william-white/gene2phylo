@@ -1,12 +1,12 @@
 rule root_astral:
     input:
-        tree = "results/astral/output.tree"
+        tree="results/astral/output.tree",
     params:
-        outgroup = outgroup
+        outgroup=outgroup,
     output:
-        tree = "results/astral/output.tree.rooted.newick"
+        tree="results/astral/output.tree.rooted.newick",
     log:
-        "logs/root_astral/log.txt"
+        "logs/root_astral/log.txt",
     conda:
         "../envs/ete3.yaml"
     shell:
