@@ -2,7 +2,7 @@
 input_dir: .test
 
 # realign (True or False)
-realign: True
+realign: False
 
 # alignment missing data threshold for alignment (0.0 - 1.0), only required if realign == True
 missing_threshold: 0.5

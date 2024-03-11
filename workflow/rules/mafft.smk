@@ -1,6 +1,8 @@
 rule mafft:
+    params:
+        input_dir = input_dir
     input:
-        input_dir+"/{genes}.fasta"
+        "{params.input_dir}/{genes}.fasta"
     output:
         "results/mafft/{genes}.fasta"
     log:

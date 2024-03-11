@@ -1,6 +1,8 @@
 rule root_iqtree_partitioned:
     input:
         tree = "results/iqtree_partitioned/output.treefile"
+    params:
+        outgroup = outgroup
     output:
         tree = "results/iqtree_partitioned/output.treefile.rooted.newick"
     log:
@@ -9,13 +11,13 @@ rule root_iqtree_partitioned:
         "../envs/ete3.yaml"
     shell:
         """
-        if [ {outgroup} == "NA" ]; then
+        if [ {params.outgroup} == "NA" ]; then
             echo "Outgroup not specified. Leaving as unrooted" > {log}
             cp {input.tree} {output.tree}
         else
             python workflow/scripts/root_newick.py \
                  --input {input.tree} \
                  --output {output.tree} \
-                 --outgroup {outgroup} &> {log}
+                 --outgroup {params.outgroup} &> {log}
         fi
         """

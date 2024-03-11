@@ -1,6 +1,9 @@
 rule plot_astral:
     input:
         tree = "results/astral/output.tree.rooted.newick"
+    params:
+        height = plot_height,
+        width = plot_width
     output:
         png = "results/astral_plot/astral_plot.png"
     log:
@@ -9,5 +12,5 @@ rule plot_astral:
         "../envs/r_env.yaml"
     shell:
         """
-        Rscript workflow/scripts/plot_tree.R {input.tree} {output.png} {plot_height} {plot_width} &> {log}
+        Rscript workflow/scripts/plot_tree.R {input.tree} {output.png} {params.plot_height} {params.plot_width} &> {log}
         """
