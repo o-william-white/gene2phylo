@@ -7,6 +7,7 @@ rule mafft:
         "logs/mafft/{genes}.log",
     conda:
         "../envs/mafft.yaml"
+    priority: 3
     shell:
         """
         mafft \

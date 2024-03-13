@@ -9,6 +9,7 @@ rule filter_alignments:
         "logs/mafft_filtered/{dataset}.log",
     conda:
         "../envs/conda_env.yaml"
+    priority: 2
     shell:
         """
         python workflow/scripts/alignments_filter.py --input {input} --output {output} --threshold {params.threshold} > {log}

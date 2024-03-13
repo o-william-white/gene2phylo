@@ -12,5 +12,5 @@ rule plot_astral:
         "../envs/r_env.yaml"
     shell:
         """
-        Rscript workflow/scripts/plot_tree.R {input.tree} {output.png} {params.plot_height} {params.plot_width} &> {log}
+        Rscript workflow/scripts/plot_tree.R {input.tree} {output.png} {params.height} {params.width} &> {log}
         """

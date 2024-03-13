@@ -10,6 +10,7 @@ rule alignment_trim:
         "logs/alignment_trim/{dataset}.log",
     conda:
         "../envs/alignment_trim.yaml"
+    priority: 1
     shell:
         """
         if [ $(grep -c "^>" {input.fasta}) -lt "5" ]; then
