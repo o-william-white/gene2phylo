@@ -1,4 +1,6 @@
 rule concatenate_alignments:
+    input:
+        expand("results/alignment_trim/{genes}.fasta", genes=GENES)
     params:
         input_dir=input_dir,
     output:

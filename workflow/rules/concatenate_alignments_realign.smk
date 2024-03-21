@@ -1,4 +1,6 @@
 rule concatenate_alignments_realign:
+    input: 
+        expand("results/alignment_trim/{genes}.fasta", genes=GENES)  
     output:
         "results/concatenate_alignments/output.fasta",
         "results/concatenate_alignments/output.txt",
